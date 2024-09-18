@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="screen.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="homeContent">
+        <span><span><img id="appleIcon" src="appleIcon.png" alt=""></span>
+            <span id="currApp">Finder</span>
+            <span>File</span>
+            <span>Edit</span>
+            <span>View</span>
+            <span>Go</span>
+            <span>Window</span>
+            <span>Help</span>
+    </span>
+    <span id="systemSettings">
+        
+            <span><img id="battery" src="apple-battery-icon-3.png" alt=""></span>
+            <span><img id="wifi" src="apple-wifi-icon.png" alt=""></span>
+            <span><img id="search" src="search.png" alt=""></span>
+            <span><img id="control" src="control_center.png" alt=""></span>
+            <span id="day"></span>
+            <span id="timeOfDay"></span>
+        
+    </span>
+
+   </header>
+    <div class="homeContent" id="appBar">
+        <span id="app" data-text="Finder"><img src="finder.png" alt=""></span>
+        <span id="app" data-text="Safari"><img src="safari.png" alt=""></span>
+        <span id="app" data-text="Pages"><img src="pages.png" alt=""></span>
+        <span id="app" data-text="Numbers"><img src="numbers.png" alt=""></span>
+        <span id="app" data-text="Keynote"><img src="keynote.png" alt=""></span>
+        <span id="app" data-text="Photos"><img src="photos.png" alt=""></span>
+        <span id="app" data-text="Music"><img src="music.png" alt=""></span>
+        <span id="app" data-text="Messages"><img src="messages.png" alt=""></span>
+        <span id="app" data-text="FaceTime"><img src="facetime.png" alt=""></span>
+        <span id="app" data-text="Maps"><img src="maps.png" alt=""></span>
+        <span id="app" data-text="Notes"><img src="notes.png" alt=""></span>
+        <span id="app" data-text="Calculator"><img src="calculator.png" alt=""></span>
+        <span id="app" data-text="Terminal"><img src="terminal.png" alt=""></span>
+        <span id="app" data-text="Siri"><img src="siri.png" alt=""></span>
+        <span id="app" data-text="VS Code"><img src="default_dark.png" alt=""></span>
+        <span id="app" data-text="Blender"><img id="bigPng" src="blender-icon.png" alt=""></span>
+        <span id="app" data-text="Unity"><img id="bigPng" src="tu3gt6ysfxq71.png" alt=""></span>
+        <span><div id="dividers"></div></span>
+        <span id="app" data-text="App Store"><img src="app-store.png" alt=""></span>
+        <span id="app" data-text="System"><img src="system-preferences.png" alt=""></span>
+        <span><div id="dividers"></div></span>
+        <span id="app" data-text="Trash"><img id="trash" src="trash.png" alt=""></span>
+    </div>
+    <!-- <div class="window">
+        <header id="windowHeader">
+            <button id="close"></button>
+            <button id="min"></button>
+            <button id="max"></button>
+        </header>
+    </div>
+-->
+   
+<script>
+ var apps = document.querySelectorAll('#app')
+ const appNameOnHover = document.getElementById('appNameOnHover');
+ var time = document.getElementById("time");
+ var date = document.getElementById("date");
+ var timeOfDay = document.getElementById("timeOfDay");
+ var day = document.getElementById("day");
+ var dateAndTime = document.getElementById("date&time");
+ var userInfo = document.getElementById("userInfo");
+
+ apps.forEach(target => {
+    target.addEventListener('mouseenter', (event) => {
+        const text = target.getAttribute('data-text');
+        appNameOnHover.textContent = text;
+        appNameOnHover.style.display = 'block';
+        const bubbleWidth = appNameOnHover.offsetWidth;
+        const rect = target.getBoundingClientRect();
+        appNameOnHover.style.left = `${rect.left + (rect.width / 2) - (bubbleWidth / 2)}px`;
+        appNameOnHover.style.bottom = `92px`;
+    });
+
+    target.addEventListener('mouseleave', () => {
+        appNameOnHover.style.display = 'none';
+    });
+
+ });
+
+ function unlock(event){
+    if (event.key === 'Enter'){
+        var passwordInput = document.getElementById("password");
+        if (passwordInput.value == "redDevils123"){
+            dateAndTime.classList.add('fade-out');
+            userInfo.classList.add('fade-out');
+            setTimeout(() => {
+            dateAndTime.style.display = "none";
+            userInfo.style.display = "none";
+            }, 500);
+        }
+    }
+ }
+
+
+ async function updateClock(time){
+    now = new Date()
+
+    const options2 = {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric'
+    }
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+    
+    hours = hours % 12;
+    hours = hours ? hours : 12; 
+    
+    time.innerHTML = `${hours}:${minutes.toString().padStart(2, '0')}`;
+    date.innerHTML = now.toLocaleDateString('en-US', options2);
+ }
+
+ async function updateClock2(time){
+    now = new Date()
+
+    const options2 = {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric'
+    }
+
+    const timeOptions = {
+        hour: 'numeric',   
+        minute: '2-digit', 
+        hour12: true       
+    };
+
+    const dateString = now.toLocaleDateString('en-US', options2).replace(/,/g, '');
+    const timeString = now.toLocaleTimeString('en-US', timeOptions);
+    day.innerHTML = dateString;
+    timeOfDay.innerHTML = timeString;
+ }
+
+ setInterval(function(){
+    updateClock(time);
+    updateClock2(time);
+ }, 1000)
+
+ window.addEventListener('keydown', unlock);
+
+ const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            alert(`Error attempting to enter fullscreen mode.`);
+        });
+    } else {
+        document.exitFullscreen().catch(err => {
+            alert(`Error attempting to exit fullscreen mode.`);
+        });
+    }
+};
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'f' || event.key === 'F') {
+        toggleFullscreen();
+        event.preventDefault();
+    }
+});
+
+
+</script>
+
+</body>
+</html>

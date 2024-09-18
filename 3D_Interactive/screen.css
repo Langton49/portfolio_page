@@ -1,0 +1,292 @@
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-image: url("Images/wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding: 10px;
+    overflow: hidden;
+    cursor: url('macOsCursor.png'), auto;
+    
+}
+
+div{
+    height: 0px;
+}
+
+.homeContent{
+    display: none;
+}
+
+
+@font-face {
+    font-family: "SF Pro DMedium";
+    src: url('SFPro/TrueType/SFProDisplay-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "SF Pro TRegular";
+    src: url('SFPro/TrueType/SFProText-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "SF Pro TBold";
+    src: url('SFPro/TrueType/SFProText-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "SF Pro T";
+    src: url('SFPro/TrueType/SFProText-Regular.ttf') format('truetype');
+}
+
+
+.date{
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+    background: transparent;
+    bottom: 420px;
+}
+
+#time{
+    font-size: 130px;
+    font-family: 'SF Pro DMedium';
+}
+
+#date{
+    
+    font-size: 30px;
+    font-family: 'SF Pro TRegular';
+}
+
+.user{
+    position: relative;
+    top: 240px;
+    
+}
+
+#profilePic img{
+    border-radius: 50%;
+    width: 60px;  
+    height: auto; 
+}
+
+#name{
+    font-family: 'SF Pro TRegular';
+    font-size: 15px;
+    color: white;
+}
+
+.user input{
+    outline: none;
+    height: 30px;
+    border: none;
+    padding-left: 15px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+header{
+    position: fixed;
+    font-family: 'SF Pro T';
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 11px;
+}
+
+header span{
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+header span img{
+    width: 25px;
+    height: 27px;
+}
+
+#currApp{
+    font-family: "SF Pro TBold";
+}
+
+#appleIcon{
+    width: 13px;
+    height: 15px;
+}
+
+#appBar{
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%, 0%);
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 1200px;
+    height: 72px;
+    border-radius: 17px;
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+#dividers{
+    width: 1px;
+    height: 53px;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-left: 12px;
+    margin-right: 12px;
+
+}
+
+#bigPng{
+    width: 45px;
+    height: 45px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+#trash{
+    height: 53.75px;
+    width: 43px;
+    margin-left: 5px;
+}
+
+img{
+   width: 58px;
+   height: 58px;
+}
+
+#systemSettings{
+    position: absolute;
+    right: 0;
+}
+
+#systemSettings{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#battery{
+    width: 22px;
+    height: 28px;
+}
+
+#search{
+    width: 11px;
+    height: 11px;
+}
+
+#wifi{
+    width: 18px;
+    height: 18px;
+}
+
+#control{
+    width: 12px;
+    height: 12px;
+}
+
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .fade-out {
+    animation: fadeOut 0.25s forwards; 
+  }
+
+#appNameOnHover{
+    display: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgba(51, 51, 51, 0.6);
+    border-radius: 4px;
+    position: absolute;
+    font-family: "SF Pro T";
+    font-size: 15px;
+    color: #fff;
+}
+
+#appNameOnHover::before{
+    content:"";
+    position: absolute;
+    width: 0;
+    height: 0;
+    transform: rotate(-90deg);
+    border-top: 7px solid transparent;
+    border-right: 8px solid  rgba(51, 51, 51, 0.6);;
+    border-bottom: 7px solid transparent;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-90deg);
+}
+
+
+/* header{
+    cursor: default;
+}
+
+.window{
+    background-color: black;
+    border: 1px rgb(181, 181, 181) solid;
+    border-radius: 15px;
+    height: 800px;
+    width: 1422px;
+    overflow: hidden;
+}
+
+#windowHeader{
+    padding: 10px;
+    background-color: #fff;
+}
+
+#windowHeader button{
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 10px;
+}
+
+#close{
+    background-color: #FF605C;
+}
+
+#close:hover{
+    background-color: aquamarine;
+}
+
+#min{
+    background-color: #FFBD44;
+}
+
+#min:hover{
+    background-color: black;
+}
+
+#max{
+    background-color: #00CA4E;
+}
+
+#max:hover{
+    background-color: antiquewhite;
+} */

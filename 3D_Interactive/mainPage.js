@@ -32,7 +32,7 @@ async function loadHTMLContent() {
 async function createHTMLTexture() {
     const htmlContent = await loadHTMLContent();
     cssRenderer = new CSS3DRenderer();
-    cssRenderer.setSize(window.innerWidth, window.innerHeight + 500);
+    cssRenderer.setSize(window.innerWidth + 500, window.innerHeight + 500);
     cssRenderer.domElement.style.position = 'absolute';
     cssRenderer.domElement.style.top = '0';
     cssRenderer.domElement.style.left = '0';

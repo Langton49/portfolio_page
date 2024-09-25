@@ -14,14 +14,6 @@ let cssRenderer, cssObject;
 
 const loader = new GLTFLoader();
 
-async function loadHTMLContent() {
-    const iframe = document.createElement('iframe');
-    iframe.src = 'screen.html'; 
-    iframe.style.width = '99%';
-    iframe.style.height = '99%';
-    return iframe;
-}
-
 function turnOn(content){
     new TWEEN.Tween(content.style)
     .to({opacity: '1'}, 2000)
@@ -32,7 +24,7 @@ function turnOn(content){
 async function createHTMLTexture() {
     const htmlContent = await loadHTMLContent();
     cssRenderer = new CSS3DRenderer();
-    cssRenderer.setSize(2520, 1080);
+    cssRenderer.setSize(window.innerWidth, window.innerHeight);
     cssRenderer.domElement.style.position = 'absolute';
     cssRenderer.domElement.style.top = '0';
     cssRenderer.domElement.style.left = '0';
@@ -45,6 +37,14 @@ async function createHTMLTexture() {
     scene.add(cssObject);
 
     setTimeout(turnOn(htmlContent), 1000);
+}
+
+async function loadHTMLContent() {
+    const iframe = document.createElement('iframe');
+    iframe.src = 'screen.html'; 
+    iframe.style.width = '99%';
+    iframe.style.height = '99%';
+    return iframe;
 }
 
 loader.load(

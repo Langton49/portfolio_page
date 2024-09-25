@@ -41,7 +41,7 @@ async function createHTMLTexture() {
 
     cssObject = new CSS3DObject(htmlContent);
     cssObject.position.set(0, 5.1, -20);
-    cssObject.scale.set(0.1, 0.1, 0.1);
+    cssObject.scale.set(0.04, 0.04, 0.1);
     scene.add(cssObject);
 
     setTimeout(turnOn(htmlContent), 1000);

@@ -42,8 +42,8 @@ async function createHTMLTexture() {
 async function loadHTMLContent() {
     const iframe = document.createElement('iframe');
     iframe.src = 'screen.html'; 
-    iframe.style.width = '99%';
-    iframe.style.height = '99%';
+    iframe.style.width = window.innerWidth;
+    iframe.style.height = window.innerHeight;
     return iframe;
 }
 

@@ -21,6 +21,14 @@ function turnOn(content){
     .start()
 }
 
+async function loadHTMLContent() {
+    const iframe = document.createElement('iframe');
+    iframe.src = 'screen.html'; 
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    return iframe;
+}
+
 async function createHTMLTexture() {
     const htmlContent = await loadHTMLContent();
     cssRenderer = new CSS3DRenderer();
@@ -37,14 +45,6 @@ async function createHTMLTexture() {
     scene.add(cssObject);
 
     setTimeout(turnOn(htmlContent), 1000);
-}
-
-async function loadHTMLContent() {
-    const iframe = document.createElement('iframe');
-    iframe.src = 'screen.html'; 
-    iframe.style.width = window.innerWidth;
-    iframe.style.height = window.innerHeight;
-    return iframe;
 }
 
 loader.load(

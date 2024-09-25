@@ -24,8 +24,8 @@ function turnOn(content){
 async function loadHTMLContent() {
     const iframe = document.createElement('iframe');
     iframe.src = 'screen.html'; 
-    iframe.style.width = '100%';
-    iframe.style.height = '100%';
+    iframe.style.width = '98%';
+    iframe.style.height = '98%';
     return iframe;
 }
 

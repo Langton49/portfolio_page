@@ -140,17 +140,17 @@ window.addEventListener("resize", function () {
     if (cssRenderer) cssRenderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-window.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-        const currPos = camera.position.clone();
-        const originPos = new THREE.Vector3(0, 5, 160);
-        const duration = 1500;
-        resetCameraPosition(currPos, originPos, duration, function () {
-            zoomInToScreen(() => {
-                createHTMLTexture();
-            });
-        });
-    }
-});
+// window.addEventListener('keydown', function (event) {
+//     if (event.key === 'Enter') {
+//         const currPos = camera.position.clone();
+//         const originPos = new THREE.Vector3(0, 5, 160);
+//         const duration = 1500;
+//         resetCameraPosition(currPos, originPos, duration, function () {
+//             zoomInToScreen(() => {
+//                 createHTMLTexture();
+//             });
+//         });
+//     }
+// });
 
 animate();

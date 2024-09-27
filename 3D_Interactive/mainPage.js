@@ -8,9 +8,14 @@ const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-let object;
-let objToRender = '3D_Objects/laptop.glb';
+let object1;
+let object2;
+let object3;
+let laptop = '3D_Objects/laptop.glb';
+let cup = '3D_Objects/coffeeCup.glb';
+let headphones = '3D_Objects/HeadPhones.glb';
 let cssRenderer, cssObject;
+let pos = 0
 
 const loader = new GLTFLoader();
 
@@ -48,12 +53,44 @@ async function createHTMLTexture() {
 }
 
 loader.load(
-    objToRender,
+    laptop,
     function (gltf) {
-        object = gltf.scene;
-        object.scale.set(10, 10, 10);
-        object.position.set(0, -15, 15);
-        scene.add(object);
+        object1 = gltf.scene;
+        object1.scale.set(10, 10, 10);
+        object1.position.set(0, -15, 15);
+        scene.add(object1);
+    },
+    function (xhr) {
+        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+    },
+    function (error) {
+        console.log(error);
+    }
+);
+
+loader.load(
+    headphones,
+    function (gltf) {
+        object2 = gltf.scene;
+        object2.scale.set(10, 10, 10);
+        object2.position.set(1150, -15, 0);
+        scene.add(object2);
+    },
+    function (xhr) {
+        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+    },
+    function (error) {
+        console.log(error);
+    }
+);
+
+loader.load(
+    cup,
+    function (gltf) {
+        object3 = gltf.scene;
+        object3.scale.set(10, 10, 10);
+        object3.position.set(-1150, -15, 0);
+        scene.add(object3);
     },
     function (xhr) {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded');
@@ -65,7 +102,7 @@ loader.load(
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x61edf7, 1);
+renderer.setClearColor(0x5d6d7e, 1);
 renderer.setPixelRatio( window.devicePixelRatio );
 let controls = new OrbitControls(camera, renderer.domElement);
 controls.minDistance = 10;
@@ -95,42 +132,75 @@ function animate() {
     if (cssRenderer) cssRenderer.render(scene, camera);
 }
 
-function resetCameraPosition(from, to, duration, callback) {
-    const startTime = Date.now();
-    const endTime = startTime + duration;
-
-    function animate() {
-        const now = Date.now();
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        camera.position.lerpVectors(from, to, progress);
-        controls.target.set(0, 5, -15);
-        controls.update();
-        camera.updateProjectionMatrix();
-        renderer.render(scene, camera);
-
-        if (progress < 1) {
-            requestAnimationFrame(animate);
-        } else {
-            if (callback) setTimeout(callback, 500);
-        }
+function changeTarget(pos, event){
+    let vector;
+    if (!object1 || !object2 || !object3) {
+        console.log("Objects not fully loaded yet.");
+        return { pos, vector: null };
     }
-
-    animate();
+    const objects = [object1, object2, object3];
+    
+    switch (event.code){
+        case 'ArrowRight':
+            if (pos != 1){
+                pos = (pos + 1) % 3;
+            }
+            break;
+        case 'ArrowLeft':
+            if (pos != 2){
+                pos = (pos - 1 + 3) % 3
+            }
+            break;
+    }
+    
+    
+    let laptopOriginOffset = new THREE.Vector3(0,15,-30);
+    let camOffset = new THREE.Vector3(0,0,250);
+    if (pos == 0){
+        vector = objects[pos].position.clone().add(laptopOriginOffset);   
+    } else {
+        vector = objects[pos].position;
+    }
+    const cameraPosition = vector.clone().add(camOffset);
+    return { pos, vector, cameraPosition };
 }
 
-function zoomInToScreen(callback) {
-    const targetPosition = new THREE.Vector3(0, 5, 80);
 
-    new TWEEN.Tween(camera.position)
-        .to(targetPosition, 2000)
-        .easing(TWEEN.Easing.Quadratic.Out)
-        .onComplete(() => {
-            if (callback) callback();
-        })
-        .start();
-}
+// function resetCameraPosition(from, to, duration, callback) {
+//     const startTime = Date.now();
+//     const endTime = startTime + duration;
+
+//     function animate() {
+//         const now = Date.now();
+//         const elapsed = now - startTime;
+//         const progress = Math.min(elapsed / duration, 1);
+
+//         camera.position.lerpVectors(from, to, progress);
+//         controls.update();
+//         camera.updateProjectionMatrix();
+//         renderer.render(scene, camera);
+
+//         if (progress < 1) {
+//             requestAnimationFrame(animate);
+//         } else {
+//             if (callback) setTimeout(callback, 500);
+//         }
+//     }
+
+//     animate();
+// }
+
+// function zoomInToScreen(callback) {
+//     const targetPosition = new THREE.Vector3(0, 5, 80);
+
+//     new TWEEN.Tween(camera.position)
+//         .to(targetPosition, 2000)
+//         .easing(TWEEN.Easing.Quadratic.Out)
+//         .onComplete(() => {
+//             if (callback) callback();
+//         })
+//         .start();
+// }
 
 
 window.addEventListener("resize", function () {
@@ -143,14 +213,32 @@ window.addEventListener("resize", function () {
 // window.addEventListener('keydown', function (event) {
 //     if (event.key === 'Enter') {
 //         const currPos = camera.position.clone();
-//         const originPos = new THREE.Vector3(0, 5, 160);
+//         const originPos = new THREE.Vector3(1150, 5, 250);
 //         const duration = 1500;
 //         resetCameraPosition(currPos, originPos, duration, function () {
-//             zoomInToScreen(() => {
-//                 createHTMLTexture();
-//             });
 //         });
 //     }
 // });
+
+
+window.addEventListener('keydown', function(event){
+    const result = changeTarget(pos, event);
+    pos = result.pos;
+    if (result.vector) {
+        // Use TWEEN to smoothly move the camera and update controls
+        new TWEEN.Tween(controls.target)
+            .to(result.vector, 900)
+            .easing(TWEEN.Easing.Quadratic.Out)
+            .start();
+        
+        new TWEEN.Tween(camera.position)
+            .to(result.cameraPosition, 900)
+            .easing(TWEEN.Easing.Quadratic.Out)
+            .start();
+    }
+});
+
+// camera.position.set(0, 0, 50);
+// controls.target.copy(objectPositions[0].position);
 
 animate();

@@ -162,7 +162,7 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease, border-bottom 0.2s ease;
 		transition: color 0.2s ease, border-bottom 0.2s ease;
 		text-decoration: none;
-		border-bottom: dotted 1px;
+		border-bottom: solid 1px #226dd6;
 		color: inherit;
 	}
 
@@ -1827,6 +1827,11 @@ input, select, textarea {
 
 /* Button */
 
+	.button.primary .icon,
+	.button .icon{
+		margin-right: 0.5em;
+	}
+
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
@@ -1860,6 +1865,7 @@ input, select, textarea {
 		button.icon,
 		.button.icon {
 			padding-left: 1.35em;
+			
 		}
 
 			input[type="submit"].icon:before,
@@ -1958,7 +1964,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #8cc9f0;
+			background-color: #226dd6;
 			color: #ffffff !important;
 			box-shadow: none;
 		}
@@ -1968,7 +1974,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #9acff2;
+				background-color: #226dd6;
 			}
 
 			input[type="submit"].primary:active,
@@ -1976,7 +1982,7 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #7ec3ee;
+				background-color: #226dd6;
 			}
 
 			input[type="submit"].primary.icon:before,
@@ -1985,6 +1991,10 @@ input, select, textarea {
 			button.primary.icon:before,
 			.button.primary.icon:before {
 				color: #ffffff !important;
+			}
+
+			.view-buttons .button.primary {
+				background-color: #226dd6;
 			}
 
 /* Form */
@@ -2257,12 +2267,12 @@ input, select, textarea {
 		}
 
 		.icon.major {
-			border: solid 1px;
 			display: inline-block;
 			border-radius: 100%;
 			padding: 0.65em;
-			margin: 0 0 2em 0;
+			margin: 0 2em 2em 2em;
 			cursor: default;
+			font-size: 0.8em;
 		}
 
 			.icon.major:before {
@@ -2361,6 +2371,12 @@ input, select, textarea {
 			background-color: rgba(255, 255, 255, 0.2);
 		}
 
+		.skill-icon{
+			height: 60px;
+			width: 60px;
+			padding-bottom: 5px;
+		}
+		
 /* Image */
 
 	.image {
@@ -2403,6 +2419,7 @@ input, select, textarea {
 
 			.image.fit img {
 				width: 100%;
+				height: inherit;
 			}
 
 		.image.main {
@@ -2812,21 +2829,63 @@ input, select, textarea {
 		margin: 0 0 3em -2em;
 		padding: 0;
 		list-style: none;
+		height: 100%;
+
 	}
 
+	.features li > * {
+		margin-bottom: 50px;
+	}
+
+	.view-buttons{
+		margin-top: auto;
+	}
 		.features li {
-			width: calc(33.33333% - 2em);
+			width: calc(50% - 2em);
 			margin-left: 2em;
-			margin-top: 3em;
-			padding: 0;
+			margin-top: 2em;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			box-sizing: border-box;
+			cursor: pointer;
 		}
 
-			.features li:nth-child(1), .features li:nth-child(2), .features li:nth-child(3) {
+
+		.features li span.image {
+			height: 200px; /* Fixed height for the image container */
+			overflow: hidden; /* Ensures the image doesn't overflow */
+			display: flex;
+			align-items: center; /* Centers the image vertically */
+			justify-content: center; /* Centers the image horizontally */
+			
+		}
+		
+		.features li span.image img {
+			max-width: 100%;
+			max-height: 100%; 
+			width: auto;
+			height: auto;
+			object-fit: cover; /* Ensures the image covers the container without distortion */
+			border-radius: 8px; /* Optional: Adds rounded corners to the image */
+		}
+
+			.features li:nth-child(1), .features li:nth-child(2){
 				margin-top: 0;
+			}
+
+			 .features li:nth-child(3) {
+				margin-top: 2em;
 			}
 
 			.features li > :last-child {
 				margin-bottom: 0;
+			}
+
+			.features li .org-desc{
+				margin-bottom: 2em;
 			}
 
 		@media screen and (max-width: 980px) {
@@ -2858,6 +2917,16 @@ input, select, textarea {
 						margin-top: 2em;
 					}
 
+		}
+
+		.credly-links{
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		.credly-links span{
+			margin-top: 0.5em;
 		}
 
 /* Statistics */
@@ -3415,7 +3484,7 @@ input, select, textarea {
 			#main input[type="button"].primary,
 			#main button.primary,
 			#main .button.primary {
-				background-color: #8cc9f0;
+				background-color: #2291d6;
 				color: #ffffff !important;
 				box-shadow: none;
 			}
@@ -3425,7 +3494,7 @@ input, select, textarea {
 				#main input[type="button"].primary:hover,
 				#main button.primary:hover,
 				#main .button.primary:hover {
-					background-color: #9acff2;
+					background-color: rgb(54, 165, 234);
 				}
 
 				#main input[type="submit"].primary:active,
@@ -3787,3 +3856,4 @@ input, select, textarea {
 			}
 
 		}
+	

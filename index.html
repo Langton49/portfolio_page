@@ -6,10 +6,11 @@
 -->
 <html>
 	<head>
-		<title>Munashe Mukweya - Software Engineer</title>
+		<title>Munashe Mukweya | Portfolio</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+	    <link rel="icon" type="image/svg+xml" href="assets/css/images/favicon.svg">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<!-- Google tag (gtag.js) -->
@@ -29,13 +30,15 @@
 				<!-- Header -->
 					<header id="header" class="alt">
 						<h1>Hi, I'm Munashe Mukweya</h1>
-						<p>I am an aspiring software engineer with a passion for merging creativity and technology.</p><br>
+						<h2>
+							<p class="typewrite" data-period="2000" data-type='[ "I&apos;m an aspiring software engineer.", "I enjoy developing software.", "I love math and physics.", "I&apos;m creative.", "I&apos;m a problem solver.", "I&apos;m...running out of things to say.", "...check out my projects down below.", "...they&apos;re pretty cool...", "Please scroll down"]'>
+							</p>
+						</h2><br>
 						<ul class="icons">
-							<li><a href="https://www.instagram.com/_20moonshine03_/" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
-							<li><a href="https://github.com/Langton49" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-							<li><a href="https://www.linkedin.com/in/munashe-mukweya/" class="icon brands fa-linkedin alt"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://www.facebook.com/share/rg4JarT94J3U4PLp/?mibextid=qi2Omg" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
-							<li><a href="assets/pdf/Munashe's Resume.pdf" title="View My Resume" class="icon solid fa-file-pdf alt"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Langton49" title="GitHub"  target="_blank" rel="noopener noreferrer" class="icon brands fa-github alt"><span class="label"></span></a></li>
+							<li><a href="https://www.linkedin.com/in/munashe-mukweya/"  target="_blank" rel="noopener noreferrer" title="LinkedIn" class="icon brands fa-linkedin alt"><span class="label"></span></a></li>
+							<li><a href="assets/pdf/Munashe's Resume.pdf"  target="_blank" rel="noopener noreferrer" title="View My Resume" class="icon solid fa-file alt"><span class="label"></span></a></li>
+							<li><a href="mailto:munashemukweya2022@gmail.com"  title="munashemukweya2022@gmail.com" class="icon solid fa-envelope alt"><span class="label"></span></a></li>
 						</ul>
 					</header>
 
@@ -44,8 +47,9 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="#intro" class="active">About Me</a></li>
-							<li><a href="#first">Interests</a></li>
-							<li><a href="#second">Learning Journey</a></li>
+							<li><a href="#first">Projects</a></li>
+							<li><a href="#second">Skills</a></li>
+							<li><a href="#third">Affiliations</a></li>
 						</ul>
 					</nav>
 
@@ -59,9 +63,13 @@
 										<header class="major">
 											<h2>About Me</h2>
 										</header>
-										<p> I’m a sophomore majoring in Computer Science and Cybersecurity at Grambling State University.
-											 I thrive on brainstorming innovative ideas and turning them into code. Right now,
-											 I’m thrilled to be a software engineering fellow at <a href="https://headstarter.co/">Headstarter</a>.
+										<p> I'm a Computer Science and Cybersecurity double major at <a href="https://www.gram.edu" target="_blank" rel="noopener noreferrer">Grambling State University</a>. I'm originally from Harare, Zimbabwe
+											and I'm currently in my second year of college. I'm passionate about software engineering, 
+											cybersecurity, and game development, and I love working on projects that challenge me to solve real-world problems. As a 
+											first-generation college student, I am driven by a strong desire to create technology that empowers communities, particularly 
+											in education and accessibility.<br><br>
+											Beyond academics, I enjoy making video games, playing soccer, and learning new skills. My goal is to continuously grow my skills, gain
+											relevent technical experience, and make an impact in the tech industry.<br><br>
 										</p>
 
 									</div>
@@ -72,60 +80,114 @@
 						<!-- First Section -->
 							<section id="first" class="main special">
 								<header class="major">
-									<h2>Interests</h2>
+									<h2>Projects</h2>
+									<p>I have worked on several projects that have allowed me to apply my skills, collaborate with others, and solve real-world problems. 
+										Here are some of the most impactful projects I’ve contributed to.</p>
 								</header>
 								<ul class="features">
 									<li>
-										<span class="icon solid major style1 fa-code"></span>
-										<h3>Programming</h3>
-										<p>I first learned programming with C++ at age 16 through <a href="https://www.sololearn.com/en/">Sololearn</a>. 
-											Since then, I’ve expanded my skills to include languages such as Python, HTML, CSS, JavaScript, C#, and SQL,
-											 among others. I’ve also gained experience with various tools, including Visual Studio, Visual Studio Code, and Android Studio.</p>
+										<span class="image fit"><img src="images/ec.png" alt=""/></span>
+										<h3>EasyCollab</h3>
+										<p>EasyCollab is a web platform that helps developers find collaborators for their projects. 
+											Users can submit project ideas, browse existing projects, and connect with potential collaborators.
+										</p>
+										<div class="view-buttons">
+											<a href="https://easy-collab.vercel.app/" target="_blank" rel="noopener noreferrer" class="button"><span class="icon solid fa-play"></span>View Demo</a>
+											<a href="https://github.com/Langton49/easy-collab"target="_blank" rel="noopener noreferrer" class="button primary"><span class="icon brands fa-github"></span>View GitHub</a>
+										</div>
 									</li>
 									<li>
-										<span class="icon solid major style2 fa-gamepad "></span>
-										<h3><a href="3D_Interactive/mainPage.html">Game Development</a></h3>
-										<p>My love for video games and growing programming skills steered me towards Unity game development. 
-											Specializing in both 2D and 3D games, I’ve expanded my journey into 3D modeling and 2D asset design.
+										<!-- <span class="icon solid major style1 fa-code"></span> -->
+										<span class="image fit"><img src="images/Title.png" alt=""/></span>
+										<h3>Escape Solstara</h3>
+										<p>A multiplayer escape room game in which players must follow clues to hidden objects scattered throughout the city
+											to uncover a hidden keyword that will grant them passage through the city gates.
 										</p>
+										<div class="view-buttons">
+											<a href="https://imgur.com/a/COeKqfj" target="_blank" rel="noopener noreferrer" class="button"><span class="icon solid fa-play"></span>Gameplay Demo</a>
+											<a href="https://github.com/Langton49/Escape-Solstara_1.0" target="_blank" rel="noopener noreferrer" class="button primary"><span class="icon brands fa-github"></span>View GitHub</a>
+										</div>
 									</li>
 									<li>
-										<span class="icon solid major style4 fa-user-secret"></span>
-										<h3>Cybersecurity</h3>
-										<p>Software vulnerabilities pose significant risks to users and businesses, so 
-											I believe security should be a top priority for software engineers and developers. 
-											This belief led me to pursue Cybersecurity as a second major, where I've developed a strong 
-											understanding of key security and networking concepts.
+										<span class="image fit"><img src="images/Screenshot 2025-03-23 200704.png" alt=""/></span>
+										<h3>SEA Web Browser</h3>
+										<p>A web browser that allows users to browse the internet.
 										</p>
+										<div class="view-buttons">
+											<a href="https://imgur.com/a/at7exyV" target="_blank" rel="noopener noreferrer" class="button"><span class="icon solid fa-play"></span>View Demo</a>
+											<a href="https://github.com/Langton49/SEA" target="_blank" rel="noopener noreferrer" class="button primary"><span class="icon brands fa-github"></span>View GitHub</a>
+										</div>
+									</li>
+									<li>
+										<span class="image fit"><img src="images/LQc.png" alt=""/></span>
+										<h3>Queens</h3>
+										<p>A game in which players must place 8 queens in an 8-by-8 grid in such a way that they do not share a row, column, or share neighboring diagonal squares.
+										</p>
+										<div class="view-buttons">
+											<a href="https://imgur.com/a/queens-uKj1L7Q" target="_blank" rel="noopener noreferrer" class="button"><span class="icon solid fa-play"></span>Gameplay Demo</a>
+											<a href="https://github.com/Langton49/LinkedIn_Queens_Clone" target="_blank" rel="noopener noreferrer" class="button primary"><span class="icon brands fa-github"></span>View GitHub</a>
+										</div>
+										
 									</li>
 								</ul>
 								
 							</section>
-
-						<!-- Second Section -->
+							<!--Second Section-->
 							<section id="second" class="main special">
 								<header class="major">
-									<h2>Learning Journey</h2>
-									<p> To become the best software engineer I can be,
-										 I've enrolled in several courses and earned certifications to enhance
-										  my technical skills. <br />
+									<h2>Skills</h2>
+									<p>Throughout my journey, I have developed a strong foundation in various technical and problem-solving skills.
+										 These are some of the key skills I have honed and grown confident in using.</p>
+								</header>
+								<div id="skills-container"></div>
+							</section>
+
+						<!-- Third Section -->
+							<section id="third" class="main special">
+								<header class="major">
+									<h2>Affiliations</h2>
+									<p> To expand my network and grow my career, I have actively joined several organizations and clubs that align with my interests in technology 
+										and professional development. Here are some that I am especially proud to be a part of.<br />
 									</p>
 								</header>
-								<ul class="statistics">
-									<li class="style1">
-										<a href="images/codepath_cyb_01_cert.PNG">Codepath Intro To Cybersecurity</a>
+								<ul class="features">
+									<li>
+										<span class="image fit"><img src="images/idqJYfC3SG_logos.png" alt=""/></span>
+										<h3><a href="https://www.codepath.org" target="_blank" rel="noopener noreferrer">Codepath</a></h3>
+										<p class="org-desc">
+											CodePath is a nonprofit organization that provides free and career-focused coding courses, technical interview prep,
+											 and mentorship programs for college students. Through Codepath's catalog of courses, I have been able to learn new
+											 technologies and gain valuable technical and collaboration skills. I am currently enrolled in the <a href="https://www.codepath.org/courses/web-development">Intermediate Web Development course</a>
+											 until May 2025. As of March 2025, I have completed the following courses:
+										</p>
+										<div class="credly-links">
+											<span><a href="assets/pdf/Intro CBS.pdf" target="_blank" rel="noopener noreferrer">Intro To Cybersecurity</a></span>
+											<span><a href="assets/pdf/Intermediate CBS.pdf" target="_blank" rel="noopener noreferrer">Intermediate Cybersecurity</a></span>
+											<span><a href="assets/pdf/Intermediate TIP.pdf" target="_blank" rel="noopener noreferrer">Intermediate Technical Interview Prep</a></span>
+										</div>
 									</li>
-									<li class="style2">
-										<a href="images/codepath_cyb_cert_02.PNG">Codepath Intermediate Cybersecurity</a>
+									<li>
+										<span class="image fit"><img src="images/id3_ys-kUw_logos.jpeg" alt=""/></span>
+										<h3><a href="https://www.yourbigyear.com/ibm-skillsbuild-ambassador-program" target="_blank" rel="noopener noreferrer">IBM SkillsBuild</a></h3>
+										<p>The Student Ambassador program with IBM SkillsBuild is a leadership and training program designed specifically for University students in the United States.
+											Through this program, I have been able to connect with other students, receive coaching from industry professionals, earn industry-recognized badges,
+											and gain valuable leadership and communication skills. Through IBM SkillsBuild, in partnership with my university, I have been able to
+											earn four badges:
+										</p>
+										<div class="credly-links">
+											<span><a href="https://www.credly.com/badges/8b37d437-d89d-4620-ad62-71c54ebced49/public_url" target="_blank" rel="noopener noreferrer">Working in a Digital World: Professional Skills</a></span>
+											<span><a href="https://www.credly.com/badges/00399ddc-8b46-40cd-8a52-3fbfbe74c462/public_url" target="_blank" rel="noopener noreferrer">Getting Started with Cybersecurity</a></span>
+											<span><a href="https://www.credly.com/badges/d60636cc-5f03-4434-a5d7-3716b0ffb85a/public_url" target="_blank" rel="noopener noreferrer">Getting Started with Artificial Intelligence</a></span>
+											<span><a href="https://www.credly.com/badges/439adf90-5e1c-420c-acd1-6b8718452709/public_url" target="_blank" rel="noopener noreferrer">Getting Started with Data</a></span>
+										</div>
 									</li>
-									<li class="style3">
-										<a href="https://www.credly.com/badges/778b2753-d349-4dbf-97d3-a17b4c2f4f94/public_url">IBM Cybersecurity Practitioner Certificate</a>
-									</li>
-									<li class="style4">
-										<a href="https://www.credly.com/badges/3d6e4bcd-690e-4136-a2fc-67f3be4547a3/linked_in_profile">Getting Started with Threat Intelligence and Hunting</a>
-									</li>
-									<li class="style5">
-										<a href="https://www.credly.com/badges/b8be663d-758a-4c67-b822-25bb3125ebac/public_url">AWS Academy Graduate - AWS Academy Cloud Foundations</a>
+									<li>
+										<span class="image fit"><img src="images/idFMie3gu6_1742781496777.png" alt=""/></span>
+										<h3><a href="https://www.colorstack.org" target="_blank" rel="noopener noreferrer">ColorStack</a></h3>
+										<p class="org-desc">ColorStack is a community aimed at increasing the number of black and latinx working in tech. Being a member
+											of ColorStack has allowed me to connect with other black and latinx professionals in tech and gain access to resources 
+											that have helped me grow my career.
+										</p>
 									</li>
 								</ul>
 							</section>
@@ -138,11 +200,9 @@
 							<dl class="alt">
 								<dt>Phone</dt>
 								<dd>(+1) 318-690-8862</dd>
-								<dt>Email</dt>
-								<dd><a href="mailto:mmukweya@gsumail.gram.edu">mmukweya@gsumail.gram.edu</a></dd>
 							</dl>
 						</section>
-						<p class="copyright">&copy; 2024 Munashe Mukweya. All rights reserved. Template by <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; 2025 Munashe Mukweya. All rights reserved. Template by <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>
@@ -155,6 +215,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/onloadRenders.js"></script>
 
 	</body>
 </html>

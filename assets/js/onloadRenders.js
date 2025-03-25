@@ -148,6 +148,10 @@ const stackList = [
         name: "Linux",
     },
     {
+        img: "https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/qt/qt-original.svg",
+        name: "Qt",
+    },
+    {
         img: "https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/unity/unity-original.svg",
         name: "Unity",
     }

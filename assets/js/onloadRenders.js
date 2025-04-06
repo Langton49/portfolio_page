@@ -124,6 +124,14 @@ const stackList = [
         name: "Bootstrap",
     },
     {
+        img: "https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/swift/swift-original.svg",
+        name: "Swift",
+    },
+    {
+        img: "https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/kotlin/kotlin-original.svg",
+        name: "Kotlin",
+    },
+    {
         img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg",
         name: "VS Code",
     },

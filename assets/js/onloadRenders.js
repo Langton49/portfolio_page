@@ -51,6 +51,10 @@ const stackList = [
         name: "C++",
     },
     {
+        img: "https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/csharp/csharp-original.svg",
+        name: "C#",
+    },
+    {
         img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
         name: "JavaScript",
     },
@@ -94,10 +98,6 @@ const stackList = [
     {
         img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
         name: "Java",
-    },
-    {
-        img: "https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/csharp/csharp-original.svg",
-        name: "C#",
     },
     {
         img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg",

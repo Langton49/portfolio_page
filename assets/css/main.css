@@ -2923,10 +2923,15 @@ input, select, textarea {
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
+			margin-top: -1rem;
 		}
 
 		.credly-links span{
 			margin-top: 0.5em;
+		}
+
+		.credly-links span strong{
+			font-weight: 900;
 		}
 
 /* Statistics */
